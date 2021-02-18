@@ -59,6 +59,7 @@ labs:
             - igt-gpu-i915
             - igt-gpu-panfrost
             - kselftest-arm64
+            - kselftest-capabilities
             - kselftest-lib
             - ltp-crypto
             - ltp-ipc

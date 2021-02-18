@@ -196,6 +196,12 @@ test_plans:
       job_timeout: '10'
       kselftest_collections: "arm64"
 
+  kselftest-capabilities:
+    <<: *kselftest
+    params:
+      job_timeout: '10'
+      kselftest_collections: "capabilities"
+
   ltp: &ltp
     rootfs: debian_buster-ltp_nfs
     pattern: 'ltp/{category}-{method}-{protocol}-{rootfs}-ltp-template.jinja2'
@@ -1717,6 +1723,7 @@ test_configs:
       - baseline-nfs
       - kselftest
       - kselftest-arm64
+      - kselftest-capabilities
       - kselftest-lib
       - ltp-crypto
 
