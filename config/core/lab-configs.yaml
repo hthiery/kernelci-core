@@ -60,7 +60,31 @@ labs:
             - igt-gpu-panfrost
             - kselftest-arm64
             - kselftest-capabilities
+            - kselftest-cgroup
+            - kselftest-clone3
+            - kselftest-core
+            - kselftest-cpufreq
+            - kselftest-drivers-dma-buf
+            - kselftest-efivarfs
+            - kselftest-filesystems-binderfs
+            - kselftest-filesystems-epoll
+            - kselftest-filesystems
+            - kselftest-firmware
+            - kselftest-fpu
+            - kselftest-ftrace
+            - kselftest-futex
+            - kselftest-intel_pstate
+            - kselftest-ipc
+            - kselftest-ir
+            - kselftest-kcmp
             - kselftest-lib
+            - kselftest-livepatch
+            - kselftest-lkdtm
+            - kselftest-membarrier
+            - kselftest-memory-hotplug
+            - kselftest-mincore
+            - kselftest-mount
+            - kselftest-pid_namespace
             - ltp-crypto
             - ltp-ipc
             - ltp-mm
