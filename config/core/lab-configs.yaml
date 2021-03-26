@@ -9,8 +9,6 @@ labs:
       - passlist:
           plan:
             - baseline
-            - baseline-fastboot
-            - baseline-qemu-docker
             - kselftest
             - preempt-rt
 
@@ -35,7 +33,6 @@ labs:
       - passlist:
           plan:
             - baseline
-            - baseline-nfs
             - sleep
           tree:
             - kernelci
@@ -48,7 +45,9 @@ labs:
     lab_type: lava
     url: 'https://lava.collabora.co.uk/RPC2/'
     filters:
-      - blocklist: {tree: [android]}
+      - blocklist:
+          tree: [android]
+          plan: [baseline-qemu-docker]
       - passlist:
           plan:
             - baseline
@@ -131,7 +130,6 @@ labs:
       - passlist:
           plan:
             - baseline
-            - baseline-nfs
 
   lab-linaro-lkft:
     lab_type: lava
@@ -141,7 +139,6 @@ labs:
       - passlist:
           plan:
             - baseline
-            - baseline-uefi
           tree:
             - kernelci
             - next
@@ -156,7 +153,6 @@ labs:
       - passlist:
           plan:
             - baseline
-            - baseline-nfs
 
   lab-nxp:
     lab_type: lava
@@ -165,6 +161,7 @@ labs:
       - passlist:
           plan:
             - baseline
+      - blocklist: {plan: [baseline-qemu-docker]}
 
   lab-pengutronix:
     lab_type: lava
@@ -173,6 +170,7 @@ labs:
       - passlist:
           plan:
             - baseline
+      - blocklist: {plan: [baseline-qemu-docker]}
 
   lab-theobroma-systems:
     lab_type: lava
@@ -181,3 +179,4 @@ labs:
       - passlist:
           plan:
             - baseline
+      - blocklist: {plan: [baseline-qemu-docker]}
