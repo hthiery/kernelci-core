@@ -115,6 +115,7 @@ labs:
             - kselftest-user
             - kselftest-zram
             - ltp-crypto
+            - ltp-fcntl-locktests
             - ltp-ipc
             - ltp-mm
             - ltp-timers
