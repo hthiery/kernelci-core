@@ -101,21 +101,21 @@ class BuildrootBuilder(RootfsBuilder):
             os.makedirs(temp_dir, exist_ok=True)
         os.chdir(temp_dir)
 
-        if os.path.isdir("buildroot"):
-            shutil.rmtree("buildroot")
-        cmd = 'git clone https://github.com/kernelci/buildroot'
-        ret = shell_cmd(cmd, True)
-        if not ret:
-            return False
-        os.chdir('buildroot')
-
-        cmd = f"./configs/frags/build {arch} {self._frag}"
+        if os.path.isdir("kernelci-br-rootfs"):
+            shutil.rmtree("kernelci-br-rootfs")
+        cmd = 'git clone https://github.com/hthiery/kernelci-br-rootfs.git'
         ret = shell_cmd(cmd, True)
         if not ret:
             return False
 
-        os.chdir('..')
-        cmd = f"mv buildroot/output/images/* {artifact_dir}"
+        os.chdir('kernelci-br-rootfs')
+
+        cmd = f"./build-rootfs {arch} {self._frag}"
+        ret = shell_cmd(cmd, True)
+        if not ret:
+            return False
+
+        cmd = f"mv output/images/* {artifact_dir}"
         return shell_cmd(cmd, True)
 
 
